@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>TikTakToe</title>
+    <link rel="icon" type="image/svg" href="TikTakToeLogo.svg">
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div id="left-bar">
+        <h1><img class="logo" src="TikTakToeLogo.svg" /><span style="color: #00F7EF;">Tik</span><span style="color: #FF004F;">Tak</span><span style="color: #fff;">Toe</span></h1>
+        <hr/>
+        <button id="sign-in-window-button" onclick="signWindowButton()">Sign In</button>
+        <br/><br/>
+        <p id="thank-you-sidebar"></p>
+    </div>
+
+    <div id="feed">
+        <img id="pause-indicator" src="play.svg" />
+        <button id="up-arrow" class="arrow" onclick="scrollUp()"><img src="arrow-up.svg"/></button>
+        <button id="down-arrow" class="arrow" onclick="scrollDown()"><img src="arrow-down.svg"/></button>
+
+        <div id="inner-feed">
+
+            <div class="post">
+                <video src="TikTakToeWelcome.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+
+            <div class="post">
+                <video src="TikTakToeIntro.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+
+            <div class="post">
+                <video src="TikTakToeExplanation.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+
+            <div class="post">
+                <video src="TRexBeachDance.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+
+            <div class="post">
+                <video src="BrrBrrPatapimSongGym.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+
+        </div>
+
+        <div id="sign-window" class="pop-window hidden">
+            <div id="sign-in" class="inner-pop">
+                <h2>Sign In</h2>
+                <p id="login-feedback" class="feedback">Error</p>
+                <br/>
+                <label for="username-login-input">Username:</label>
+                <input id="username-login-input" name="username-input" type="text"/>
+                <br/><br/>
+                <label for="password-input">Password:</label>
+                <input id="password-login-input" name="password-input" type="password"/>
+                <br/><br/>
+                <button onclick="loginButton()">Log In</button>
+                <br/><br/><br/><br/><br/>
+                <p>Don't have an account?</p>
+                <button onclick="openSignUpWindow()">Sign Up</button>
+            </div>
+            <div id="sign-up" class="inner-pop hidden">
+                <h2>Sign Up</h2>
+                <p id="register-feedback" class="feedback">Error</p>
+                <br/>
+                <label for="username-input">Username:</label>
+                <input id="username-register-input" name="username-input" type="text"/>
+                <br/><br/>
+                <label for="password-input">Password:</label>
+                <input id="password-register-input" name="password-input" type="text"/>
+                <br/><br/>
+                <label for="password-confirmation">Confirm Password:</label>
+                <input id="password-register-confirmation" name="password-confirmation" type="text"/>
+                <br/><br/>
+                <button onclick="registerAccount()">Register</button>
+                <br/><br/><br/><br/><br/>
+                <p>Already have an account?</p>
+                <button onclick="openSignInWindow()">Sign In</button>
+            </div>
+            <div id="pop-thank-you" class="inner-pop hidden">
+                <h2>Thank you!</h2>
+                <p id="thank-you-text"></p>
+                <p>We here at <strong><span style="color: #00F7EF;">Tik</span><span style="color: #FF004F;">Tak</span><span style="color: #fff;">Toe</span></strong> value you as a user.</p>
+                <p>Enjoy your stay! Remember to come back whenever you are left alone with your thoughts!</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

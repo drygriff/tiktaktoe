@@ -1,0 +1,249 @@
+body {
+    min-height: 600px;
+    margin: 0;
+    background-color: #111;
+    color: #eee;
+    font-family: sans-serif;
+}
+
+
+#feed {
+    height: max(100vh, 600px);
+    width: calc(max(50vh, 300px) + 300px);
+    overflow: hidden;
+    margin: 0 0 0 max(calc(50% - (25vh + 150px)), 400px);
+    padding: 0;
+    position: relative;
+}
+
+#inner-feed {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    transition: 0.25s;
+    position: relative;
+    top: 0;
+}
+
+.post {
+    height: 90%;
+    margin: max(5vh, 30px) auto max(10vh, 60px);
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
+
+.like-button {
+    width: 80px;
+    height: 80px;
+    padding: 15px;
+    background-color: #333;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 40px);
+    right: 50px;
+}
+
+.like-button:hover {
+    background-color: #222;
+}
+
+.like-button img {
+    height: 100%;
+    width: 100%;
+}
+
+img.liked {
+  animation: like-pop 0.3s ease-out;
+}
+
+
+@keyframes like-pop {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  40% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button.arrow {
+    width: 80px;
+    height: 80px;
+    padding: 15px;
+    background-color: #333;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    left: 50px;
+    z-index: 10;
+}
+
+button.arrow img {
+    width: 100%;
+    height: 100%;
+}
+
+button.arrow:hover {
+    background-color: #222;
+}
+
+#up-arrow {
+    top: calc(50% - 40px - 50px);
+}
+
+#down-arrow {
+    top: calc(50% - 40px + 50px);
+}
+
+video {
+    height: 100%;
+    border-radius: 40px;
+}
+
+#pause-indicator {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #000000;
+    height: 50px;
+    width: 50px;
+    padding: 20px;
+    z-index: 10;
+    left: calc(50% - 30px);
+    top: calc(50% - 30px);
+    opacity: 0;
+}
+
+.fade-animation {
+    animation: fade-keyframes 0.4s ease-in;
+}
+
+@keyframes fade-keyframes {
+    0% {opacity: 0.5;}
+    100% {opacity: 0;}
+}
+
+#left-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    background-color: #000;
+    text-align: center;
+    z-index: 20;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+#left-bar hr {
+    border-top: 1px solid #fff;
+    width: 60%;
+    margin-bottom: 100px;
+}
+
+#left-bar p {
+    font-size: 20px;
+}
+
+#left-bar #thank-you-text {
+    margin-top: 60px;
+}
+
+img.logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: -30px;
+}
+
+button#sign-in-window-button {
+    background: #000;
+    border-radius: 25px;
+    width: 200px;
+    height: 75px;
+    border: 1px solid #ddd;
+    color: #fff;
+    font-size: 30px;
+}
+
+button#sign-in-button:hover {
+    background: #111;
+}
+
+.pop-window {
+    position: absolute;
+    background-color: #000;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    font-size: 20px;
+    box-shadow: 20px 20px 20px #111;
+    transition: 0.25s;
+}
+
+.pop-window.hidden {
+    top: 150%;
+}
+
+.pop-window h2 {
+    font-size: 40px;
+}
+
+
+.pop-window button {
+    background: #000;
+    border-radius: 15px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid #ddd;
+    color: #fff;
+    font-size: 15px;
+}
+
+.pop-window .inner-pop {
+    background: none;
+    min-width: 400px;
+    min-height: 400px;
+    padding: 0;
+    margin: 80px 100px 60px;
+}
+
+.pop-window .inner-pop.hidden {
+    display: none;
+}
+
+.pop-window .feedback {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border-radius: 15px;
+    opacity: 0;
+    min-width: 150px;
+}
+
+.feedback.success {
+    background-color: #030;
+    opacity: 1;
+    transition: 0.1s;
+}
+
+.feedback.failure {
+    background-color: #300;
+    opacity: 1;
+    transition: 0.1s;
+}
